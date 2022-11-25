@@ -268,7 +268,6 @@ iptables-save > saved_iptables_rules.txt
 systemctl enable iptables | tee -a $INSTALLATION_LOG
 systemctl start iptables | tee -a  $INSTALLATION_LOG
 
-# iptables -L | tee -a $INSTALLATION_LOG
 iptables -L -v --line-numbers | tee -a $INSTALLATION_LOG
 
 echo -e "\n"
