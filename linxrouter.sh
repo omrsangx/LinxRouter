@@ -327,8 +327,6 @@ EOLWIREGUARD
 chmod 600 /etc/wireguard/*
 
 cat /etc/wireguard/wg0.conf 
-echo "Press Enter to continue"
-read
 
 echo -e "\n"
 echo "****************************************************************************************************"
