@@ -65,7 +65,12 @@ network:
 EOLNETPLAN
 
 netplan apply | tee -a $INSTALLATION_LOG
-    
+
+echo "****** Configuring DNS information ******"
+echo "nameserver 1.1.1.1" | tee -a /run/systemd/resolve/resolv.conf
+mv /etc/resolv.conf $BACKUP_CONF_DIR
+ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
 echo -e "\n"    
 echo "Network configuration completd - press Enter to continue or Ctrl + c to terminate......"
 read
